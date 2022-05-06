@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page d'affichage des résultats utilisateur - Capteurs fixes</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="utilisateurCapteursFixes.css">
+	<div class="menuHaut">
+		<ul class="menuHautGauche">
+			<li class="infinitemeasures"><a href="https://infinitemeasures.fr/">Infinite Measures</a></li>
+			<li><a href="">Menu</a></li>
+			<li><a href="">Résultats</a></li>
+		</ul>
+		<ul class="menuHautDroite">
+			<li><a href="">FR</a></li>
+			<li><a href="">Notifications</a></li>
+			<li><a href="">Profil</a></li>
+			<li><a href="">Déconnexion</a></li>
+		</ul>
+	</div>	
+</head>
+
+
+
+<body>
+	<div class="corps">
+		<div class="corpsGauche">
+			<ul class="corpsGaucheHaut">
+				<li class="corpsGaucheHautUtilisateur">Utilisateur</li>
+				<li class="corpsGaucheHautPhoto">Photo</li>
+                <li class="identifiant">NOM Prénom</li>                  
+			</ul>
+			<ul class="corpsGaucheBas">
+				<li><a href="utilisateurCapteurCardiaque.html">Capteur cardiaque</a></li>
+				<li><a href="utilisateurCapteursFixes.html">Votre poste de travail</a></li>
+				<li><a href="utilisateurCarteChantier.html">Carte chantier</a></li>
+			</ul>
+		</div>
+
+
+
+		<div class="corpsCentral" style="flex-grow: 7; display: flex; flex-direction: row   ; flex-wrap: wrap;"">
+            <header style="margin-bottom: 0; background-color: azure;">
+                Date
+            </header>
+			<div class="capteurTempérature capteur">
+				<header>
+					Température
+				</header>
+				<div>
+					32.3°
+				</div>
+			</div>
+			<div class="capteurHumidite capteur">
+				<header>
+					Humidité
+				</header>
+				<div class="valeur">
+					35%
+				</div>
+			</div>
+			<div class="capteurBruit capteur">
+				<header>
+					Bruit
+				</header>
+				<div class="valeur">
+					72dB
+				</div>
+			</div>
+			<div class="capteurCO2 capteur">
+				<header>
+					Taux de CO2
+				</header>
+				<div class="valeur">
+					420ppm
+				</div>
+			</div>
+		</div>
+
+
+		<div class="corpsDroit" style="flex-grow: 1;">
+		    <a class="boutonDroite" href="#Télécharger">Télécharger</a>
+			<a class="boutonDroite" href="#Graphiques">Graphiques</a>
+		</div>		
+	</div>
+</body>
+
+</html>
