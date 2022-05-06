@@ -1,0 +1,344 @@
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif ;
+}
+
+
+
+
+.menuHaut{
+	display: flex;
+	background-color: #3d8bcd;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 20px;
+}
+
+
+
+.menuHaut ul{
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+
+
+.menuHaut ul li{
+	padding: 25px;
+}
+
+
+
+.menuHaut ul li a{
+	color : white;
+	text-decoration: none;
+	padding: auto;
+}
+
+
+
+.menuHaut ul li:hover{
+	background-color: black;
+	transition: 1.5s;
+}
+
+
+
+.corps{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+
+
+.corps div{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+
+.corpsGauche{
+    flex-grow: 0.5;
+    background-color : #3d8bcd;
+}
+
+
+
+
+
+.corpsGauche ul {
+	list-style: none;
+	font-style: italic;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+.corpsGaucheHaut{
+    display: flex;
+	height: 200px;
+    flex-direction: column;
+	background-color: azure;
+}
+
+
+
+.corpsGaucheHautUtilisateur{
+	display: flex;
+    border-bottom: 1px solid;
+	margin: 0;
+	font-size: 20px;
+	flex-grow: 1;
+}
+
+
+.corpsGaucheHautPhoto{
+    background-color: azure;
+	flex-grow: 6;
+}
+
+
+
+.identifiant{
+    flex-grow: 1;
+    border-top: 1px solid black;
+    padding: auto;
+    text-align: center;
+}
+
+
+
+
+.corpsGaucheBas {
+	display: flex;
+	flex-direction: column;
+	background-color: #3d8bcd;
+    height: 450px;
+}
+
+
+
+.corpsGaucheBas li {
+	justify-content: space-around;
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+.corpsGaucheBas li:hover{
+	background-color: black;
+}
+
+
+
+.corpsGaucheBas a {
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+
+
+.corpsCentral{	
+	flex-grow: 7;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background-image: url(https://tse3.mm.bing.net/th?id=OIP.VC4HgDWDaYO8zVJr2uReYQHaE8&pid=Api);
+	background-repeat: repeat;
+	background-size:cover;
+}
+
+
+
+.corpsDroit{
+	background-color: #3d8bcd;
+}
+
+
+
+.corpsCentral > header {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+
+
+.capteur {
+	width: 250px;
+	height: 300px;
+	margin: auto;
+    margin-top: 20px;
+	align-content: space-around;
+    border: 3px solid #3d8bcd;
+	text-align: center;
+	border-radius: 10%;
+	background-color: white;
+    box-shadow: 10px 10px 10px #3d8bcd;
+}
+
+
+.capteur > div{
+	margin: auto;
+	padding: auto;
+	text-align: center;
+	justify-content: space-around;
+	font-size: 40px;
+	height: 180px;
+	width: 180px;
+	border-radius: 100%;
+	border : 10px solid;
+}
+
+
+
+.capteur > header{
+	font-size: larger;
+	border-bottom: 2px solid #3d8bcd;
+	padding: 10px;
+	margin: 0;
+}
+
+
+
+
+.capteurTempérature div{
+	border-color: red;
+}
+
+.capteurHumidite div{
+	border-color:lawngreen;
+}
+
+.capteurBruit div{
+	border-color:gold;
+}
+
+.capteurCO2 div{
+	border-color:orange;
+}
+
+
+
+
+.boutonDroite {
+    margin: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+    width : 75px;
+    justify-content: center;
+    padding : 5%;
+	text-align: center;
+	list-style: none;
+	text-decoration: none;
+	color: white;
+	border-radius: 10px;
+    font-size-adjust: 100%;
+}
+
+
+.boutonDroite:hover{
+	background-color: black;
+	color : white;
+	transition: 1.5s;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .menuHaut {
+        font-size : 12px;   
+    }
+
+    .menuHaut ul li{
+        padding: 10px 5px;
+    }
+    
+
+    .corps{
+        flex-direction: column;
+    }
+
+
+    .corpsGaucheBas{
+        height: 35px;
+        flex-direction: row;
+    }
+
+
+    .corpsGaucheBas li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+
+    .corpsGaucheBas a{
+        font-size: 12px;
+		padding: 0;
+		margin: 0;
+    }
+
+
+    .corpsGaucheHaut{
+        height: 100px;
+		flex-direction: row;
+    }
+
+
+	.corpsGaucheHautUtilisateur{
+		flex-grow: 1;
+		border-bottom: none;
+		border-right: 1px solid black;
+		justify-content: center;
+	}
+
+
+
+    .corpsGaucheHautPhoto{
+        flex-grow: 1;
+    }
+
+
+
+    .identifiant{
+		flex-grow: 1;
+		border-top: none;
+		border-left: 1px solid black;
+
+    }
+
+
+
+    .capteur{
+        margin-top: 50px;
+		width: 200px;
+		height: 250px;
+    }
+
+	.capteur > div {
+		width: 150px;
+		height: 150px;
+	}
+
+}
