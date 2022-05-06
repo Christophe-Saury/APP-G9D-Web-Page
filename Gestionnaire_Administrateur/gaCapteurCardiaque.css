@@ -63,11 +63,12 @@
 
 
 /* Sections corpsGauche ======================================================================================================================== */
-.corpsGauche{
-    background-color : #3d8bcd;
+.corpsGaucheHaut{
+    display: flex;
+	height: 200px;
+    flex-direction: column;
+	background-color: azure;
 }
-
-
 
 
 
