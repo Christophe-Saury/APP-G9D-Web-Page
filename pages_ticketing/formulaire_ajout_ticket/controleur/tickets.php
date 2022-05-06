@@ -97,7 +97,7 @@ switch ($function) {
     break;
 }    
 
-include ('C:\xampp\htdocs\pages_ticketing\formulaire_ajout_ticket\vue\header.php');
-include ('C:/xampp/htdocs/pages_ticketing/formulaire_ajout_ticket/vue/' . $vue . '.php');
-include ('C:\xampp\htdocs\pages_ticketing\formulaire_ajout_ticket\vue\footer.php');
+include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue\header.php');
+include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue/' . $vue . '.php');
+include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue\footer.php');
 ?>
