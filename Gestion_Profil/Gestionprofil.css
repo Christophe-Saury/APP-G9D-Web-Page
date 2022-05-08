@@ -1,0 +1,114 @@
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+html,body{
+	margin: 30px;
+	padding:20px;
+}
+td.tableau{
+	border-color:black;
+	border-style:solid;
+}
+td.tdprofile{
+	color:white;
+}
+tr.USER{
+	border-bottom-style: dotted;
+	position:relative;
+	left: 25px;	
+	
+}	
+img#grandimageprofil{
+	margin:30px;
+	padding:15px;
+	position: absolute;
+	top:0; left: 2%; 
+}
+
+table#tableUser{
+	width:inherit-20px;
+	height: 200px;
+	margin:20px;
+	padding:20px;
+
+	position: relative;
+	top:120px;
+	bottom:0px;
+	right: 4,5%;
+}
+input{
+	position:inherit;
+	width:99%;
+	height:35px;
+}
+.grosdiv{
+	border-color:solid;
+	width:100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	left:0;
+	right:0;
+	background-color:#eee;
+	border-color:black;
+	border-style: solid;
+}
+.divprofil{
+	background-color:#3d88cd;
+	border-color:black;
+	width: 20%;
+	height:90%;
+	border-style: solid;
+}
+
+.divrecherche{
+	height:10%;
+	width:80%;
+	border-color:black;
+	border-style:solid;	
+	background-color:white;
+	margin-left:65px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.tableau{
+	height:60%;
+	width:auto;
+	background-color:#eee;
+	margin-left:65px;
+	margin-right:65px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+	
+.moydiv{
+	width:60%;
+	height:70%;
+	background-color:#3d88cd;
+	border-color:black;
+	border-style:solid;
+	position: absolute;
+	top:54px;
+	right:108px;
+	
+}
+
+.divmoypetit{
+	background-color:#eee;	
+	border-color:black;
+	border-style:solid;
+}
+.texte1{
+	color:black;
+	text-align:center;
+}
+div#div6{
+	height:10%;
+	width:auto;
+	border-color:black;
+	border-style:solid;
+}
+button#userid{
+	width: 30px;
+	height:31px;
+}
