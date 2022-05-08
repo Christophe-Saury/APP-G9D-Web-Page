@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+	<head>
+		<title> modifier FAQ </title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width , initial-scale = 1.0">
+		<link href ="Style_modifier_FAQ.css" rel="stylesheet" type="text/css">
+	</head>
+
+    <body>
+		<!-- Grand titre de la page -->
+        <h1> Modifier une question </h1>
+		    
+        
+            <div class="carre" id="div1">
+
+        <!-- Début du formulaire servant à modifier une question, méthode post -->
+
+			<form action="modifier_faq.php" method="post" id="modq">
+
+			<table class="updatefaq">
+
+				<tr>
+                    <!-- Titre du tableau Sujet -->
+					<th class="titreat">Sujet:</th>
+					<td>
+						<input type="text" name="modsujet" value=""/> 
+					</td>
+
+				</tr>
+				<tr>
+
+					<th class="titreat">Contenu de la question: </th>
+					<td><textarea name="modContenu" style="width:400px;height:200px;"></textarea></td>
+
+				</tr>
+				<tr>
+
+				<td><input type="submit" name="modEnregistrer" value="Enregistrer" /></td>
+
+				</tr>
+
+			</table>
+
+			</form> <!-- Fin du formulaire -->
+
+		</div>
+		</body>	
+
+	</html>	
+		
