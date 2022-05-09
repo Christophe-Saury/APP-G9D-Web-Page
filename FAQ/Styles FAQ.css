@@ -1,0 +1,168 @@
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+
+/* Style de la division Zero, division qui encadre toutes les sections  */
+
+.div0{
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:200px;
+	padding-top:20px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom:20px;
+}
+
+p#text1{
+	text-align:center;
+	width: 90%;
+	padding: 8px;
+	height: 60%;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color:#3d88cd;
+	border-style:solid;
+	cursor: pointer;
+	color: white;
+	border-radius: 5px;
+}	
+
+/* des bouttons Ajouter une question, modifier une question et répondre à une question   */
+button#ajouterbutton {
+	background-color: #eee;
+	color:black;
+	position: absolute;
+	top: 0%;
+	left: 9.5%; 
+	border-radius: 5px;
+}
+
+button#modifierbutton {
+	background-color: #eee;
+	color:black;
+	position: absolute;
+	top: 0%;
+	right: 8% ;
+	border-radius: 5px;
+}
+
+button#répondrebutton {
+	background-color: #eee;
+	color:black;
+	position: absolute;
+	top: 0%;
+	right: 42% ;
+	border-radius: 5px;
+}
+
+.dropdown{
+	position: relative;	
+	margin-bottom:0%;
+	transition-delay:0.1s;
+	transition-duration:0.1s;
+	transition-timing-function:ease-out;
+}
+.dropdown:hover{
+	margin-bottom:15%;
+}
+.textarea{
+	position: absolute;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 90%;
+	height: 270%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 15px;
+	
+	border-style: solid;
+	background-color: #eee;
+	border-color:#3d88cd;
+	border-radius: 10px;
+	
+	border-color:#3d88cd;
+	border-radius: 10px;
+	z-index:4;
+	display: none;
+}
+.dropdown:hover .textarea {
+  display: block;
+}
+
+.span1,.span2 {
+	text-decoration: underline ;
+}
+
+.textarea {
+	background-color:#eee;
+	border-color:#3d88cd;
+	border-radius: 10px;
+	margin-bottom: 20%;
+	
+}
+
+div#mouv {
+	height:auto;
+	width:auto;
+	transition-duration: 0.1s;
+	transition-delay: 0.1s;
+	transition-timing-function: ease-in,
+	z-index -1;
+}
+.dropdown:hover .div#mouv{
+	position:relative;
+	bottom: 20%;
+	
+}
+.para1{
+	width:90%;
+	padding:8px;
+	text-align: center;
+	border-style: solid;
+	height : 55%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 45px;
+	background-color:#3d88cd;
+	color:white;
+	border-radius:10px;
+}
+
+
+
+.para2, .para4, .para5 {
+	width: 90%;
+	padding:8px;
+	text-align: center;
+	border-style: solid;
+	height : 15%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 15px;
+	background-color:#3d88cd;
+	font-style:bold;
+	color:white;
+	border-radius:10px;
+}
+
+
+/* Styles plaçant les conditions générales d'utilisation en bas au centre de la page  */
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+/*
+.texte1{
+	text-align: center;
+	color:black;
+	position: relative;
+	bottom: 0%;
+	right:35%;
+	left:35%;	
+}
+*/

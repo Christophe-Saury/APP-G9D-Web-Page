@@ -3,47 +3,6 @@
 }
 
 
-.menuHaut{
-	display: flex;
-	background-color: #3d8bcd;
-	justify-content: space-between;
-	width: 100%;
-	font-size: 20px;
-}
-
-
-
-.menuHaut ul{
-	list-style: none;
-	display: flex;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	text-decoration: none;
-}
-
-
-
-.menuHaut ul li{
-	padding: 25px;
-}
-
-
-
-.menuHaut ul li a{
-	color : white;
-	text-decoration: none;
-	padding: auto;
-}
-
-
-
-.menuHaut ul li:hover{
-	background-color: black;
-	transition: 1.5s;
-}
-
-
 
 .corps{
 	display: flex;
@@ -150,47 +109,47 @@
 
 
 .corpsCentral{	
+	flex-grow: 7;
 	display: flex;
 	flex-wrap: wrap;
-    flex-grow: 7;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 
 
 
-
-
-.corpsDroit{
-	background-color: #3d8bcd;
+.enteteCentral{
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	margin: auto;
 }
 
 
-.boutonDroite {
-    margin: auto;
-	margin-top: 25px;
-	margin-bottom: 25px;
-    width : 75px;
-    justify-content: center;
-    padding : 5%;
+
+.enteteCentral > button {
+	display: flex;
+	border: 2px solid #3d8bcd;
+	margin: auto;
+	margin-top: 10px;
+	padding: 10px;
+	color: black;
+	background-color: white;
 	text-align: center;
-	list-style: none;
 	text-decoration: none;
-	border-radius: 10px;
-    font-size-adjust: 100%;
+	font-size: 20px;
+	cursor: pointer;
+}
+.enteteCentral button:hover {
+	background-color: #3d8bcd;
 	color: white;
-}
-
-
-.boutonDroite:hover{
-	background-color: black;
-	transition: 1.5s;
-}
-
+	transition-duration: 1s;
+  }
+  
 
 table{
 	width: 90%;
-	margin: 20px auto;
+	margin: auto;
 }
 
 
