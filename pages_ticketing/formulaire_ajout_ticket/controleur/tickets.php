@@ -8,19 +8,21 @@ $table_reponse ='reponse';
 
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 18;
+$id_utilisateur = 21;
 $role_Utilisateur = 0;
 
 if ($role_Utilisateur == 1){
     //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
     if (isset($_GET['fonction'])){
         $function = $_GET['fonction'];
+        $IDTicket =$_GET ['id_ticket_recherche'];
     }else{
         $function='tickets';
     }   
 }else {
     if (isset($_GET['fonction'])){
         $function = $_GET['fonction'];
+        $IDTicket =$_GET ['id_ticket_recherche'];
     }else{
         $function='tickets_admin';
     }      
@@ -45,10 +47,7 @@ switch ($action) {
         changerEtat($bdd, $IDTicket, $res);
         $res = demanderEtat($bdd, $IDTicket);
     break; 
-    case 'voir' :
-        $ligne= afficheUnTicket ($bdd, $IDTicket);
-        $ligne2= recupereReponse($bdd, $IDTicket);
-    break;
+
 }
 
 
@@ -94,6 +93,12 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             insertion($bdd, $values, $table_reponse);
         }
+    break;
+
+    case 'voir' :
+        $ligne= afficheUnTicket ($bdd, $IDTicket);
+        $ligne2= recupereReponse($bdd, $IDTicket);
+        $vue = "detail_ticket";
     break;
 }    
 
