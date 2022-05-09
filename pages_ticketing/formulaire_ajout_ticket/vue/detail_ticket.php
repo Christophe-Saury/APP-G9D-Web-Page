@@ -1,4 +1,4 @@
-<div id="a_masquer" style="display:none;">
+
     <h1>Visualisation du ticket</h1>
     <?php foreach  ( $ligne as $test)?>
         <table class="view_ticket">  
@@ -72,4 +72,4 @@
                 </td>
             </tr>
         </table>
-        </div>
+
