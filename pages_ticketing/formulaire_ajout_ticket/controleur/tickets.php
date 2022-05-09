@@ -1,15 +1,15 @@
 <?php
 
 //On récupère les requêtes génériques
-include('C:\xampp\htdocs\pages_ticketing\formulaire_ajout_ticket\modele\requetes.generiques.php');
+include('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\modele\requetes.generiques.php');
 //0n définit le nom de la table
 $table = "tickets";
 $table_reponse ='reponse';
 
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 21;
-$role_Utilisateur = 1;
+$id_utilisateur = 18;
+$role_Utilisateur = 0;
 
 if ($role_Utilisateur == 1){
     //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage

@@ -52,7 +52,7 @@
                     <form action ='' method ='GET'> 
                         <input type="hidden" name = "action" value ='voir'/>
                         <input type ="hidden" name="id_ticket_recherche" value ='<?php echo $element['id_ticket'];?>'/>
-                        <button type="submit">
+                        <button type="submit" id = "voir">
                             <i class="fas fa-eye"></i>
                         </button> 
                     </form>
@@ -86,6 +86,8 @@
         </table>
     </div>  
         
+
+    <div id ="visualisation_detail_ticket">
     <h1>Visualisation du ticket</h1>
     <?php foreach  ( $ligne as $test)?>
         <table class="view_ticket">  
@@ -158,5 +160,51 @@
                     }?>
                 </td>
             </tr>
-          
         </table>
+        </div>
+
+
+<script >
+
+let togg1 = document.getElementById("togg1");
+let togg2 = document.getElementById("togg2");
+let d1 = document.getElementById("d1");
+let d2 = document.getElementById("d2");
+togg1.addEventListener("click", () => {
+  if(getComputedStyle(d1).display != "none"){
+    d1.style.display = "none";
+  } else {
+    d1.style.display = "block";
+  }
+})
+
+function togg(){
+  if(getComputedStyle(d2).display != "none"){
+    d2.style.display = "none";
+  } else {
+    d2.style.display = "block";
+  }
+};
+togg2.onclick = togg;
+
+</script>
+
+
+
+<h1>Comment afficher ou masquer un élément HTML</h1>
+    <button id="togg1">Cliquez-moi !</button>
+    <button id="togg2">Cliquez-moi !</button>
+    <div id="d1">
+        <p>Ce texte appartient au premier div de ma page</p>
+        <p>Ce deuxième paragraphe également</p>
+    </div>
+    <div id="d2">
+        <p>Il existe deux façons de cacher un élément <span>comme un div</span> en CSS :</p>
+        <ul>
+            <li>Utiliser visibility: hidden</li>
+            <li>Utiliser display: none</li>
+        </ul>
+    </div>
+</body>
+</html>
+
