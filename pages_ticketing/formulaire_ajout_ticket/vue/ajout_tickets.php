@@ -4,7 +4,7 @@
             <button type ='submit'class="button_add"> Voir vos tickets</button>
     </form> 
     <br>
-    <form method="POST" action ="" name="ajouter_ticket" onsubmit="return test()">
+    <form method="POST" action ="" name="ajouter_ticket" onsubmit="return test();">
         <table class="add_ticket">
             <tr>
                 <th class="titreat">Sujet:</th>
@@ -14,7 +14,9 @@
             </tr>
             <tr>
                 <th class="titreat">Message:</th>
-                <td><textarea name="message" class="champ"></textarea></td>
+                <td>
+                    <textarea name="message" class="champ"></textarea>
+                </td>
             </tr>
             <tr>
                 <th class="titreat">Priorité de votre message:</th>
@@ -25,10 +27,6 @@
                         <option class="rouge" value="3">Haute</option>
                     </select>
                 </td>
-            </tr>
-            <tr>
-                <th class="titreat">Votre email:</th>
-                <td><input type="text" name="mail" /></td>
             </tr>
             <tr>
                 <td></td>
@@ -42,11 +40,18 @@
 <script>
     function test(){
     var sujet = document.forms["ajouter_ticket"]["sujet"];
+    var message = document.forms["ajouter_ticket"]["message"];
 
     if (sujet.value == "")                                 
     { 
         alert("remplissez le sujet"); 
         sujet.focus(); 
+        return false;
+    } 
+    if (message.value == "")                                 
+    { 
+        alert("remplissez le message"); 
+        message.focus(); 
         return false;
     } 
     return true; 

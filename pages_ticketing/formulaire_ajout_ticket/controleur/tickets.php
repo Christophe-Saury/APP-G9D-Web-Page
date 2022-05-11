@@ -7,23 +7,19 @@ $table_reponse ='reponse';
 
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 20;
-$role_Utilisateur = 1;
-if ($role_Utilisateur == 1){
-    //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
-    if (isset($_GET['fonction'])){
-        $function = ($_GET['fonction']);
-    }else{
-        $function='tickets';
-    }   
-}else {
-    if (isset($_GET['fonction'])){
-        $function = $_GET['fonction'];
-    }else{
-        $function='tickets_admin';
-    }      
-}
+$id_utilisateur = 21;
+$role_utilisateur =0;
 
+//Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
+if (isset($_GET['fonction'])){
+        $function = ($_GET['fonction']);
+}else{
+    if ($role_utilisateur == 1){
+        $function='tickets';
+    }else {
+        $function='tickets_admin';
+    }   
+}
 
 //Controleur des fonctionalités des boutons
 if(isset($_GET['action'])) {

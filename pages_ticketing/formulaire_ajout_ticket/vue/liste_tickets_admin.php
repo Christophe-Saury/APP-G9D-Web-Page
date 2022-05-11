@@ -56,14 +56,14 @@
                             <i class="fas fa-eye"></i>
                         </button> 
                     </form>
-                    <form action ='' method ='GET'> 
+                    <form action ='' method ='GET' onsubmit="return confirmer_supprimer();"> 
                         <input type="hidden" name = "action" value ='supprimer'/>
                         <input type ="hidden" name="id_ticket_recherche" value ='<?php echo $element['id_ticket'];?>'/>
-                        <button type="submit" >
+                        <button type="submit">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>
-                    <form action ='' method ='GET'>
+                    <form action ='' method ='GET' onsubmit="return confirmer_fermer();">
                         <input type="hidden" name = "action" value ='fermer'/>
                         <input type ="hidden" name="id_ticket_recherche" value ='<?php echo $element['id_ticket'];?>'/> 
                         <button type = 'submit'>
@@ -84,4 +84,20 @@
         </table>
     </div>  
         
-    
+<script>
+function confirmer_supprimer(){
+    if (confirm ("Voulez vous vraiment supprimer ce ticket ? ")){ 
+        return true;
+    }else {
+        return false; 
+    }   
+}  
+function confirmer_fermer(){
+    if (confirm ("Voulez vous vraiment fermer ce ticket ? Votre action sera irrémédiable ")){ 
+        return true;
+    }else {
+        return false; 
+    }   
+}  
+
+</script>
