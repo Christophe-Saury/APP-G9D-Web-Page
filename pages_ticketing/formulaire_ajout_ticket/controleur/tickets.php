@@ -7,9 +7,8 @@ $table_reponse ='reponse';
 
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 21;
-$role_utilisateur =0;
-
+$id_utilisateur = 18;//$_SESSION['user_id'];
+$role_utilisateur =1;//$_SESSION['role'];
 //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
 if (isset($_GET['fonction'])){
         $function = ($_GET['fonction']);
@@ -36,7 +35,6 @@ switch ($action) {
     case 'fermer' : 
         $res = demanderEtat($bdd, $IDTicket);
         changerEtat($bdd, $IDTicket, $res);
-        $res = demanderEtat($bdd, $IDTicket);
     break; 
 
 }
