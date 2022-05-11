@@ -1,4 +1,5 @@
 <?php
+
 //On récupère les requêtes génériques
 include('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\modele\requetes.generiques.php');
 //0n définit le nom de la table
@@ -7,12 +8,13 @@ $table_reponse ='reponse';
 
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 20;
+$id_utilisateur = 21;
 $role_Utilisateur = 1;
+
 if ($role_Utilisateur == 1){
     //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
     if (isset($_GET['fonction'])){
-        $function = ($_GET['fonction']);
+        $function = $_GET['fonction'];
     }else{
         $function='tickets';
     }   
@@ -32,6 +34,7 @@ if(isset($_GET['action'])) {
 }else {
     $action='';
 }
+
 switch ($action) {
     case 'supprimer' :
         supprimeTicket ($bdd, $IDTicket);
@@ -42,8 +45,12 @@ switch ($action) {
         changerEtat($bdd, $IDTicket, $res);
         $res = demanderEtat($bdd, $IDTicket);
     break; 
-
+    case 'voir' :
+        $ligne= afficheUnTicket ($bdd, $IDTicket);
+        $ligne2= recupereReponse($bdd, $IDTicket);
+    break;
 }
+
 
 switch ($function) {
     case 'tickets':
@@ -51,6 +58,7 @@ switch ($function) {
         $vue = "liste_tickets";
         $liste = recupereTousSelontUtilisateur($bdd, $id_utilisateur);
     break;
+
 
     case 'ajout': 
         //Ajouter un ticket
@@ -86,13 +94,6 @@ switch ($function) {
             // Appel à la BDD à travers une fonction du modèle.
             insertion($bdd, $values, $table_reponse);
         }
-    break;
-
-    case 'voir' :
-        $IDTicket =$_GET ['id_ticket_recherche'];
-        $ligne= afficheUnTicket ($bdd, $IDTicket);
-        $ligne2= recupereReponse($bdd, $IDTicket);
-        $vue = "detail_ticket";
     break;
 }    
 

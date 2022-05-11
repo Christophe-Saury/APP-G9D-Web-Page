@@ -4,7 +4,7 @@
             <button type ='submit'class="button_add"> Voir vos tickets</button>
     </form> 
     <br>
-    <form method="POST" action ="" name="ajouter_ticket" onsubmit="return test()">
+    <form method ="POST" action ="">
         <table class="add_ticket">
             <tr>
                 <th class="titreat">Sujet:</th>
@@ -33,22 +33,8 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type ="submit" name= "submit">
+                    <button type ="submit" name= "submit">Envoyer</button>
                 </td>
             </tr>
         </table>
     </form>
-
-<script>
-    function test(){
-    var sujet = document.forms["ajouter_ticket"]["sujet"];
-
-    if (sujet.value == "")                                 
-    { 
-        alert("remplissez le sujet"); 
-        sujet.focus(); 
-        return false;
-    } 
-    return true; 
-}  
-</script>

@@ -43,7 +43,7 @@
                 </td>
                 <td>
                     <form action ='' method ='GET'> 
-                        <input type="hidden" name = "fonction" value ='voir'/>
+                        <input type="hidden" name = "action" value ='voir'/>
                         <input type ="hidden" name="id_ticket_recherche" value ='<?php echo $element['id_ticket'];?>'/>
                         <button type="submit">
                             <i class="fas fa-eye"></i>
@@ -69,3 +69,68 @@
             <tbody>
         </table>
     </div>
+
+  
+        
+            
+    <h1>Visualisation du ticket</h1>
+    <?php foreach  ( $ligne as $test)?>
+        <table class="view_ticket">  
+            <tr>
+                <th class="titre">Ticket ID:</th>
+                <td>
+                    <?php echo $test['id_ticket'];?>
+                </td>
+            </tr>
+            <tr>
+                <th class="titre">Sujet:</th>
+                <td>
+                    <?php echo $test ['sujet']; ?> 
+                </td>
+            </tr>
+            <tr>
+                <th class="titre">Message:</th>
+                <td>
+                    <?php  echo nl2br($test ['message']);?>
+                </td>
+            </tr>
+            <tr>
+                <th class="titre">Priorité du message:</th>
+                <td>
+                <?php $ArrayPriorites = array( // servira à afficher la définition du champ "priorite" dans la table HTML
+                        1 => "<span style='color:green;font-weight:bold'>Faible</span>",
+                        2 => "<span style='color:orange;font-weight:bold'>Normale</span>",
+                        3 => "<span style='color:red;font-weight:bold'>Haute</span>",
+                        );
+                     echo $ArrayPriorites[$test ['priorite']];?>
+                </td>
+            </tr>
+            <tr>
+                <th class="titre">Réponses:</th>
+                    <td>
+                        <?php foreach ($ligne2 as $element2) { ?>
+                        <table>
+                            <tr>
+                                <td>
+                                    Ajoutée le : <?php echo $element2['date_ajout']; ?>
+                                    <br />
+                                    Sujet : <?php echo $element2['sujet'];?>
+                                    <br />
+                                    <br />
+                                    Message : 
+                                    <br /> <?php echo nl2br($element2['message']);?>
+                                </td>
+                                                        
+                            </tr>
+                        </table>
+                        <?php }?>
+                    </td>
+            </tr>
+            <tr>
+                <th class="titre">Ajoutée le</th>
+                <td>
+                    <?php echo $test ['date_ouverture'];?>
+                </td>
+            </tr>
+          
+        </table>

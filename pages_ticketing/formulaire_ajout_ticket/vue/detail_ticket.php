@@ -1,4 +1,7 @@
-
+<form method='GET' action =''>
+        <input type ="hidden" name= "fonction" value='tickets_admin'/>
+        <button type ='submit'class="button_add"> Voir tous les tickets</button>
+    </form> 
     <h1>Visualisation du ticket</h1>
     <?php foreach  ( $ligne as $test)?>
         <table class="view_ticket">  
