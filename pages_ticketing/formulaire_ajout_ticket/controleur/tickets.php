@@ -8,7 +8,7 @@ $table_reponse ='reponse';
 //On recupère les infos de la personne qui se connecte 
 //à completer plus tard avec la partie de @Yassine
 $id_utilisateur = 18;//$_SESSION['user_id'];
-$role_utilisateur =1;//$_SESSION['role'];
+$role_utilisateur =0;//$_SESSION['role'];
 //Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
 if (isset($_GET['fonction'])){
         $function = ($_GET['fonction']);

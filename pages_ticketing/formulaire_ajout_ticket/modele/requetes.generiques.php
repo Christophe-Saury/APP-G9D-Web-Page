@@ -60,19 +60,15 @@ function demanderEtat(PDO $bdd,$id){
     $valeurEtat = $bdd->prepare('SELECT etat FROM tickets WHERE id_ticket = :id');
     $res= $valeurEtat -> execute([
         'id' => $id,
-        ]);
-
-    echo ($res);
+    ]);
 }
 
 //Change l'etat d'un ticket
 function changerEtat (PDO $bdd,$id,$res) {
     if ($res = 1){
         $etat = 0;
-        echo ('if');
     } else {
         $etat = 1;
-        echo ('else');
     }
 
     $changerEtat = $bdd->prepare('UPDATE tickets SET etat = :etat WHERE id_ticket = :id'  );
