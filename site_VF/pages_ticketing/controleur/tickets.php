@@ -1,6 +1,6 @@
 <?php
 //On récupère les requêtes génériques
-include('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\modele\requetes.generiques.php');
+include "modele/requetes.generiques.php";
 //0n définit le nom de la table
 $table = "tickets";
 $table_reponse ='reponse';
@@ -98,7 +98,7 @@ switch ($function) {
 }  
 
 
-include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue\header.php');
-include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue/' . $vue . '.php');
-include ('C:\xampp\htdocs\APP-G9D-Site-Web\APP-G9D-Site-Web\pages_ticketing\formulaire_ajout_ticket\vue\footer.php');
+include (':/pages_ticketing/formulaire_ajout_ticket/vue/header.php');
+include (':/pages_ticketing/formulaire_ajout_ticket/vue/' . $vue . '.php');
+include (':/pages_ticketing/formulaire_ajout_ticket/vue/footer.php');
 ?>
