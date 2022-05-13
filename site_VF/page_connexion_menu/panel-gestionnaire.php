@@ -110,13 +110,13 @@ $('.header').delay(2000).animate({opacity:0},1000)
                 </div>
             </li>
 
-            <li id="sf-opportunity" class="col">
+            <li id="sf-opportunity" class="col"> 
                 <div class="sf-wrap">
                     <div class="sf-mdl-left">
                         <div class="sf-icon">
                             <i class="iconcolor fa fa-fw fa-triangle-exclamation fa-5x"></i>
                         </div>
-                        <h3>Tickets</h3>
+                        <a href="pages_ticketing\controleur\tickets.php">Tickets</a>
                     </div>
                     <div class="sf-mdl-right">
                         <div class="sf-icon">
