@@ -1,7 +1,6 @@
-
     <h1>Visualisation du ticket</h1>
     <form method='GET' action =''>
-        <input type ="hidden" name= "fonction" value="tickets"/>
+        <input type ="hidden" name= "fonction" value="tickets_admin"/>
         <button type ='submit'class="button_add"> Voir tous les tickets</button>
     </form> 
     <br>
