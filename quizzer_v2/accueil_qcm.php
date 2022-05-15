@@ -1,6 +1,6 @@
 <?php
 
-$id_user= $SESSION['id_utilisateur'];
+$id_user= $SESSION['role_utilisateur'];
 
 if($id_user== 2){
 
