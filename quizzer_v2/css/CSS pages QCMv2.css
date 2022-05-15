@@ -1,0 +1,185 @@
+
+* {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  }
+  
+  body{
+    height: 100%;
+  }
+  
+  
+  
+  
+  
+  /* Css classes for the flexboxes - Page de Questions du QCM */
+  
+  .div_container{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:stretch;
+  }
+  
+  
+  
+  /* Header */
+  .blue_header{
+    height:20%;
+  }
+  
+  /* Question Container */
+  
+  .Question_Container {
+    width:70%;
+    margin:auto;
+    text-align: center;
+    height:30%;
+  }
+  
+  .current{
+    font-weight: bold; font-size: 150%;
+  }
+  
+    .Question {
+      color: #004C99; font-weight: bold; font-size: 175%; 
+    }
+  
+    .Question_Expl {
+      color: #999999; font-weight: bold; font-size: 110%; align-self: center;
+    }
+  
+  
+  /* Answer Container */
+  
+  .Answer_Container{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items:stretch;
+    height:300px;
+    width:70%;
+    margin:auto;
+    top: 60%;
+  }
+  
+    .Answer_Column{
+      display:flex;
+      flex-direction:column;
+      justify-content: space-around;
+      align-items:stretch;
+      height: 70%;
+      margin: auto;
+    }
+  
+    .Answer_Box{
+  
+      border: 2px solid #000000; 
+      padding: 15px;
+      width: 400px;
+      height: 100px;
+      border-radius: 15px;
+      margin:10px;
+    }
+  
+  
+  
+  
+    .Answer_text{
+      color: #004C99;
+      font-weight: bold ;
+      font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+      font-size: 150%;
+      align-self:center;
+    }
+  
+  
+    
+  
+  /* Button Container */
+  
+  .Button_Container{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: right;
+    align-items:stretch;
+    height:200px;
+    width:90%;
+    
+    margin-right:100%;
+    bottom: 10%;
+  }
+  
+    .Button_Column{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content: center;
+      align-items:stretch;
+      height:200px;
+      width:190px;
+      
+      margin:10px;
+      bottom: 10%;
+    }
+  
+
+  
+
+  
+  
+    .Big_button {
+      display: inline-block;
+      background-color: #3D8BCD;
+      border-radius: 20px;
+      border: 3px single #000000;
+      color: #eeeeee;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: 180px;
+      height: 120px;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+    }
+  
+  
+
+  
+    .Small_Squares{
+      background-color: #3D8BCD;
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      border: 5px #000000;
+      margin: 5px;
+    }
+  
+  /* Footer */
+  
+  .Footer_Container{
+    height:20%;
+  }
+  
+  /* End of FlexBox elements */
+  
+  /* Other Styling elements */
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
