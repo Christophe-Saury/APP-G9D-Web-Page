@@ -2,7 +2,8 @@
 <html>
 
 <?php
-    require("modele.php");
+    require("constants.php");
+    $fonction = 10;
     $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
     $hour = time(); // Heure actuelle
     $hour2 = date('H:i:s',$hour -3600); // Heure d'avant
@@ -20,6 +21,9 @@
         $nom = $np3[0];
         $prenom = $np3[1];
     }
+    if (!$fonction == 0){
+        echo 'erreur';
+    }
 ?>
 
 
@@ -33,73 +37,67 @@
 
 <body>
 	<div class="corps">
-		<div class="corpsGauche">
-			<ul class="corpsGaucheHaut">
-				<li class="corpsGaucheHautUtilisateur">Utilisateur</li>
-                <li class="identifiant"><?php echo "$nom $prenom";?></li>                  
-			</ul>
-			<ul class="corpsGaucheBas">
-				<li><a href="index.php">Capteur cardiaque</a></li>
-				<li><a href="utilisateurCapteursFixes.php">Votre poste de travail</a></li>
-				<li><a href="utilisateurCarteChantier.php">Carte chantier</a></li>
-			</ul>
+		<div>
+            <?php include("steper.php") ?>
 		</div>
-
-		<div class="corpsCentral">
-            <header>
-                <div class="localisation">
-                    Localisation
-                </div>
-                <div class="Température capteur">
-                    <ul>
-                        <li>Température : </li>
-                        <li>Valeur</li>
-                        <i class="material-icons" style="font-size: 30px; color:green">thermostat</i>
-                    </ul>
-                </div>
-                <div class="CO2 capteur">
-                    <ul>
-                        <li>CO2 :</li>
-                        <li>Valeur</li>
-                        <i class="material-icons" style="font-size: 30px; color: orange;">co2</i>
-                    </ul>
-                </div>
-                <div class="Humidité capteur">
-                    <ul>
-                        <li>Humidité :</li>
-                        <li>Valeur</li>
-                        <i class="material-icons" style="font-size: 30px; color: orange;">water_drop</i>
-                    </ul>
-                </div>
-                <div class="Bruit capteur">
-                    <ul>
-                        <li>Bruit :</li>
-                        <li>Valeur</li>
-                        <i class="material-icons" style="font-size: 30px; color: red;">equalizer</i>
-                    </ul>
-                </div>
-            </header>
+        <div class="central">
             <div class="corpsCentral">
-                <div class="corpsCentralCarte">
-                    <img src=https://www.bati-solar.fr/wp-content/uploads/2018/10/nos-maisons-plans-chatellerault-poitiers-plans-des-maisons-dhabitation-plans-des-maisons.jpg style="width : 100%;opacity: 0.5;" alt="CarteChantier" usemap="#CarteChantier1">
-                    <map name="CarteChantier1">
-                        <area shape="rect" coords="0 0 410 310" alt="Chambre 1" href="#chambre1.htm">
-                        <area shape="rect" coords="0 310 310 690" alt="Garage" href="#garage.htm">
-                        <area shape="rect" coords="310 310 780 680" alt="Salon" href="#salon.htm">
-                        <area shape="rect" coords="410 0 770 310" alt="Terrasse" href="#terrasse.htm">
-                        <area shape="rect" coords="770 0 1200 460" alt="Chambres23" href="#chambres23.htm">
-                        <area shape="rect" coords="770 460 1200 690" alt="Cuisine" href="#cuisine.htm">
-                    </map>
+                <header>
+                    <div class="localisation">
+                        Localisation
+                    </div>
+                    <div class="Température capteur">
+                        <ul>
+                            <li>Température : </li>
+                            <li>Valeur</li>
+                            <i class="material-icons" style="font-size: 30px; color:green">thermostat</i>
+                        </ul>
+                    </div>
+                    <div class="CO2 capteur">
+                        <ul>
+                            <li>CO2 :</li>
+                            <li>Valeur</li>
+                            <i class="material-icons" style="font-size: 30px; color: orange;">co2</i>
+                        </ul>
+                    </div>
+                    <div class="Humidité capteur">
+                        <ul>
+                            <li>Humidité :</li>
+                            <li>Valeur</li>
+                            <i class="material-icons" style="font-size: 30px; color: orange;">water_drop</i>
+                        </ul>
+                    </div>
+                    <div class="Bruit capteur">
+                        <ul>
+                            <li>Bruit :</li>
+                            <li>Valeur</li>
+                            <i class="material-icons" style="font-size: 30px; color: red;">equalizer</i>
+                        </ul>
+                    </div>
+                </header>
+                <div style = "height : 75px; width = 100%; background-color : azure;">
+                    <p style="margin : auto; padding : auto; font-size : 30px">
+				    <?php
+				    echo date('d/m/Y H:i:s', $hour); // Date actuelle à l'ouverture de la page
+				    ?>
+			        </p>
                 </div>
-                <div class="corpsDroit">
-		            <button>Cuisine</button>
-			        <button>Chambre 1</button>
-                    <button>Garage</button>
-			        <button>Séjour</button>
-		        </div>	
-            </div>
-        </div>	
-	</div>
+                <div class="corpsCentral">
+                    <div class="corpsCentralCarte">
+                        <img src=https://www.bati-solar.fr/wp-content/uploads/2018/10/nos-maisons-plans-chatellerault-poitiers-plans-des-maisons-dhabitation-plans-des-maisons.jpg style="width : 100%;opacity: 0.5;" alt="CarteChantier" usemap="#CarteChantier1">
+                        <map name="CarteChantier1">
+                            <area shape="rect" coords="0 0 410 310" alt="Chambre 1" href="#chambre1.htm">
+                            <area shape="rect" coords="0 310 310 690" alt="Garage" href="#garage.htm">
+                            <area shape="rect" coords="310 310 780 680" alt="Salon" href="#salon.htm">
+                            <area shape="rect" coords="410 0 770 310" alt="Terrasse" href="#terrasse.htm">
+                            <area shape="rect" coords="770 0 1200 460" alt="Chambres23" href="#chambres23.htm">
+                            <area shape="rect" coords="770 460 1200 690" alt="Cuisine" href="#cuisine.htm">
+                        </map>
+                    </div>	
+                </div>
+            </div>	
+        </div>
+    </div>
 	
 
 

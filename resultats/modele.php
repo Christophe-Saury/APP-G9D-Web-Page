@@ -2,9 +2,8 @@
     
 
     require('constants.php');
-
+    
     $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
-
 
     function couleur(string $grandeurMesure) {
         require('constants.php');

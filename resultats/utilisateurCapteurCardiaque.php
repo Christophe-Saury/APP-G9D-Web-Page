@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<?php 
+<?php
 	$db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root',''); // Connexion BDD
 	$hour = time(); // Heure actuelle
 	$hour2 = date('H:i:s',$hour -3600); // Heure d'avant
@@ -70,22 +70,20 @@
 
 <body>
 	<div class="corps">
-		<div class="corpsGauche">
-			<ul class="corpsGaucheHaut">
-				<li class="corpsGaucheHautUtilisateur">Utilisateur</li>
-                <li class="identifiant"><?php echo "$nom $prenom";?></li>                  
-			</ul>
-			<ul class="corpsGaucheBas">
-				<li><a href="index.php">Capteur cardiaque</a></li>
-				<li><a href="utilisateurCapteursFixes.php">Votre poste de travail</a></li>
-				<li><a href="utilisateurCarteChantier.php">Carte chantier</a></li>
-			</ul>
+		<div>
+            <?php include("steper.php") ?>
 		</div>
 		<div class="central">
-			<header style="margin-bottom: 0; background-color: azure;">
-				<p><?php
+			<header>
+				<p style="margin : auto; padding : auto; font-size : 30px">
+				<?php
 				echo date('d/m/Y H:i:s', $hour); // Date actuelle à l'ouverture de la page
-				?></p>
+				?>
+				</p>
+				<div class="boutonsCentral">
+					<a href = "projet\mesures_cardiaque.ibd" download="Fichier Base de Données">Téléchargement</a>
+					<a href = "#" style='visibility : hidden;'>Graphiques</a>
+				</div>
 			</header>			
 			<div class="corpsCentral" style="flex-direction:row">
 				<div class="capteurCardiaque capteur">
@@ -141,12 +139,9 @@
 							echo "<div style=border-color:$borderColor> $result</div>";
 						} // Rythme cardiaque actuel
 					?>
-				</div>
-			</div>
-			<!--<footer class="boutonsCentral">
-				<button>Téléchargement</button>
-				<button>Graphiques</button>
-			</footer>-->
+				</div>			
+
+			</div>				
 		</div>
 	</div>
 

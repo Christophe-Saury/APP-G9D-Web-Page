@@ -8,6 +8,7 @@
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	height: auto;
 }
 
 
@@ -21,94 +22,8 @@
 
 
 
-.corpsGauche{
-    flex-grow: 0.5;
-    background-color : #3d8bcd;
-}
-
-
-
-
-
-.corpsGauche ul {
-	list-style: none;
-	font-style: italic;
-	padding: 0;
-	margin: 0;
-}
-
-
-
-.corpsGaucheHaut{
-    display: flex;
-	height: 200px;
-    flex-direction: column;
-	background-color: azure;
-}
-
-
-
-.corpsGaucheHautUtilisateur{
-	display: flex;
-    border-bottom: 1px solid;
-	margin: 0;
-	font-size: 20px;
-	flex-grow: 1;
-}
-
-
-.corpsGaucheHautPhoto{
-    background-color: azure;
-	flex-grow: 6;
-}
-
-
-
-.identifiant{
-    flex-grow: 1;
-    border-top: 1px solid black;
-    padding: auto;
-    text-align: center;
-}
-
-
-
-
-.corpsGaucheBas {
-	display: flex;
-	flex-direction: column;
-	background-color: #3d8bcd;
-    height: 450px;
-}
-
-
-
-.corpsGaucheBas li {
-	justify-content: space-around;
-	width: 100%;
-	text-align: center;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
-
-
-.corpsGaucheBas li:hover{
-	background-color: black;
-}
-
-
-
-.corpsGaucheBas a {
-	font-size: 20px;
-	text-decoration: none;
-	color: white;
-}
-
-
-
 .corpsCentral{	
-	flex-grow: 7;
+	height : 7;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -172,30 +87,48 @@
 
 
 
+.central > header {
+	display: flex;
+	flex-direction : row;
+	float: left;
+	justify-content: center;
+	font-size: 20px;
+	padding : auto;
+	background-color: azure;
+	height : 200px;
+}
 
 
-.boutonDroite {
-    margin: auto;
-	margin-top: 25px;
-	margin-bottom: 25px;
-    width : 75px;
-    justify-content: center;
-    padding : 5%;
+
+
+.boutonsCentral{
+	display: flex;
+	flex-direction: row;
+	
+}
+
+.boutonsCentral a{
+	display: flex;
+	width: 200px;
+	border: 2px solid #3d8bcd;
+	margin: 10px;
+	padding: 10px;
+	color: black;
+	background-color: white;
 	text-align: center;
-	list-style: none;
+	justify-content: center;
 	text-decoration: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+
+
+.boutonsCentral a:hover {
+	background-color: #3d8bcd;
 	color: white;
-	border-radius: 10px;
-    font-size-adjust: 100%;
-}
-
-
-.boutonDroite:hover{
-	background-color: black;
-	color : white;
-	transition: 1.5s;
-}
-
+	transition-duration: 1s;
+  }
 
 
 
@@ -205,67 +138,10 @@
 
 
 @media screen and (max-width: 600px) {
-    .menuHaut {
-        font-size : 12px;   
-    }
-
-    .menuHaut ul li{
-        padding: 10px 5px;
-    }
-    
 
     .corps{
         flex-direction: column;
     }
-
-
-    .corpsGaucheBas{
-        height: 35px;
-        flex-direction: row;
-    }
-
-
-    .corpsGaucheBas li{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-
-    .corpsGaucheBas a{
-        font-size: 12px;
-		padding: 0;
-		margin: 0;
-    }
-
-
-    .corpsGaucheHaut{
-        height: 100px;
-		flex-direction: row;
-    }
-
-
-	.corpsGaucheHautUtilisateur{
-		flex-grow: 1;
-		border-bottom: none;
-		border-right: 1px solid black;
-		justify-content: center;
-	}
-
-
-
-    .corpsGaucheHautPhoto{
-        flex-grow: 1;
-    }
-
-
-
-    .identifiant{
-		flex-grow: 1;
-		border-top: none;
-		border-left: 1px solid black;
-
-    }
-
 
 
     .capteur{

@@ -19,25 +19,15 @@
 	<title>Page d'affichage des résultats Administrateur Gestionnaire - Capteurs fixes</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="gaCapteursFixes.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 
 <body>
 	<div class="corps">
-		<div class="corpsGauche">
-			<ul class="corpsGaucheHaut">
-				<li class="corpsGaucheHautUtilisateur">Administrateur</li>
-                <li class="identifiant"><?php echo "$nom $prenom"?></li>                  
-			</ul>
-			<ul class="corpsGaucheBas">
-				<li><a href="index.php">Capteurs cardiaques</a></li>
-				<li><a href="gaCapteursFixes.php">Postes de travail</a></li>
-				<li><a href="gaCarteChantier.php">Carte chantier</a></li>
-			</ul>
+        <div>
+            <?php include("steperGA.php") ?>
 		</div>
-
-
-
 		<div class="corpsCentral">
             <table class="tableauRésultats">
                 <tr class="entete">  
@@ -52,7 +42,21 @@
                 $fixe -> execute(['jour' => $dateExemple]);
                 $fixe2 = $fixe -> fetchAll();
                 foreach($fixe2 as $fixe3) {
-                    echo "<tr><td>{$fixe3[0]}</td><td>{$fixe3[1]}</td><td>{$fixe3[2]}</td><td>{$fixe3[3]}</td><td>{$fixe3[4]}</td></tr>";
+                    $temperature = $fixe3[1];
+                    $couleurTemperature = associationCouleur(couleur('temperature'),$temperature);
+                    $humidite = $fixe3[2];
+                    $couleurHumidite = associationCouleur(couleur('humidite'),$humidite);
+                    $bruit = $fixe3[3];
+                    $couleurBruit = associationCouleur(couleur('bruit'),$bruit);
+                    $co2 = $fixe3[4];
+                    $couleurCo2 = associationCouleur(couleur('co2'),$co2);
+                    echo "<tr>
+                    <td>{$fixe3[0]}</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurTemperature;'>trip_origin</i>   {$temperature}</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurHumidite;'>trip_origin</i>   {$humidite}</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurBruit;'>trip_origin</i>   {$bruit}</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurCo2;'>trip_origin</i>   {$co2}</td>
+                    </tr>";
                 }
                 ?>
               </table>

@@ -42,78 +42,76 @@
 <head>
 	<title>Page d'affichage des résultats utilisateur - Capteurs fixes</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="utilisateurCapteursFixes.css">
+	<link rel="stylesheet" href="utilisateurCapteurCardiaque.css">
 </head>
 
 
 
 <body>
 	<div class="corps">
-		<div class="corpsGauche">
-			<ul class="corpsGaucheHaut">
-				<li class="corpsGaucheHautUtilisateur">Utilisateur</li>
-                <li class="identifiant"><?php echo "$nom $prenom";?></li>                  
-			</ul>
-			<ul class="corpsGaucheBas">
-				<li><a href="index.php">Capteur cardiaque</a></li>
-				<li><a href="utilisateurCapteursFixes.php">Votre poste de travail</a></li>
-				<li><a href="utilisateurCarteChantier.php">Carte chantier</a></li>
-			</ul>
+		<div>
+            <?php include("steper.php") ?>
 		</div>
-
-
-
-		<div class="corpsCentral" style="flex-grow: 7; display: flex; flex-direction: row   ; flex-wrap: wrap;"">
-            <header style="margin-bottom: 0; background-color: azure;">
-				<p><?php
+		<div class="central">
+			<header>
+				<p style="margin : auto; padding : auto; font-size : 30px">
+				<?php
 				echo date('d/m/Y H:i:s', $hour); // Date actuelle à l'ouverture de la page
-				?></p>
-            </header>
-			<div class="capteurTempérature capteur">
-				<header>
-					Température
-				</header>
-				<?php
-				$grandeur = 'temperature';
-				$coul = couleur($grandeur);
-				$borderColor = associationCouleur($coul,$temp);
-				echo "<div class=valeur style=border-color:$borderColor> $temp °</div>";
 				?>
-			</div>
-			<div class="capteurHumidite capteur">
-				<header>
-					Humidité
-				</header>
-				<?php
-				$grandeur = 'humidite';
-				$coul = couleur($grandeur);
-				$borderColor = associationCouleur($coul,$hum);
-				echo "<div class=valeur style=border-color:$borderColor> $hum %</div>";
-				?>
-			</div>
-			<div class="capteurBruit capteur">
-				<header>
-					Bruit
-				</header>
-				<?php
-				$grandeur = 'bruit';
-				$coul = couleur($grandeur);
-				$borderColor = associationCouleur($coul,$bruit);
-				echo "<div class=valeur style=border-color:$borderColor> $bruit dB</div>";
-				?>
-			</div>
-			<div class="capteurCO2 capteur">
-				<header>
-					Taux de CO2
-				</header>
-				<?php
-				$grandeur = 'co2';
-				$coul = couleur($grandeur);
-				$borderColor = associationCouleur($coul,$co2);
-				echo "<div class=valeur style=border-color:$borderColor> $co2 ppm</div>";
-				?>
-			</div>
-		</div>	
+				</p>
+				<div class="boutonsCentral">
+					<a href = "projet\mesures_cardiaque.ibd" download="Fichier Base de Données"> Téléchargement</a>
+					<a href = "#" style='visibility : hidden;'> Graphiques </a>
+				</div>
+			</header>
+			<div class="corpsCentral" style="flex-grow: 7; display: flex; flex-direction: row   ; flex-wrap: wrap;">
+				<div class="capteurTempérature capteur">
+					<header>
+						Température
+					</header>
+					<?php
+					$grandeur = 'temperature';
+					$coul = couleur($grandeur);
+					$borderColor = associationCouleur($coul,$temp);
+					echo "<div class=valeur style=border-color:$borderColor> $temp °</div>";
+					?>
+				</div>
+				<div class="capteurHumidite capteur">
+					<header>
+						Humidité
+					</header>
+					<?php
+					$grandeur = 'humidite';
+					$coul = couleur($grandeur);
+					$borderColor = associationCouleur($coul,$hum);
+					echo "<div class=valeur style=border-color:$borderColor> $hum %</div>";
+					?>
+				</div>
+				<div class="capteurBruit capteur">
+					<header>
+						Bruit
+					</header>
+					<?php
+					$grandeur = 'bruit';
+					$coul = couleur($grandeur);
+					$borderColor = associationCouleur($coul,$bruit);
+					echo "<div class=valeur style=border-color:$borderColor> $bruit dB</div>";
+					?>
+				</div>
+				<div class="capteurCO2 capteur">
+					<header>
+						Taux de CO2
+					</header>
+					<?php
+					$grandeur = 'co2';
+					$coul = couleur($grandeur);
+					$borderColor = associationCouleur($coul,$co2);
+					echo "<div class=valeur style=border-color:$borderColor> $co2 ppm</div>";
+					?>
+				</div>
+			</div>	
+		
+		</div>		
 	</div>
 </body>
 
