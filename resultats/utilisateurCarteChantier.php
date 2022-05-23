@@ -2,17 +2,7 @@
 <html>
 
 <?php
-    require("constants.php");
-    $fonction = 10;
-    $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
-    $hour = time(); // Heure actuelle
-    $hour2 = date('H:i:s',$hour -3600); // Heure d'avant
-    $day = date('Y-m-d'); // date du jour
-    $seuilFreq = 160; // Seuil de signalisation "stress"
-    $periodeMesure = 60; // Intervalle de temps entre chaque mesure (en s)
-    
-    $dateExemple = '2022-01-01'; // Test de date
-    $heureExemple = '15:00:00'; // Test d'horaire
+    require("modele.php");
 
     $np = $db -> prepare('SELECT nom, prenom FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
     $np ->  execute(['id_utilisateur' => $identifiant]);
@@ -30,7 +20,7 @@
 <head>
 	<title>Page d'affichage des résultats utilisateur - Carte Chantier</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="utilisateurCarteChantier.css">
+	<link rel="stylesheet" href="css_resultats/utilisateurCarteChantier.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 

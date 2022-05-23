@@ -3,22 +3,13 @@
 
 
 <?php
-    require("constants.php");
-    $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
+    require("modele.php");
 
-    if(!isset($poste)){
-        $poste = 0;
+    if(!isset($posteCarte)){
+        $posteCarte = 0;
+    } else {
+        
     }
-
-    $hour = time(); // Heure actuelle
-    $hour2 = date('H:i:s',$hour -3600); // Heure d'avant
-    $day = date('Y-m-d'); // date du jour
-    $seuilFreq = 160; // Seuil de signalisation "stress"
-    $periodeMesure = 60; // Intervalle de temps entre chaque mesure (en s)
-
-    $dateExemple = '2022-01-01'; // Test de date
-    $heureExemple = '15:00:00'; // Test d'horaire
-
 
     $np = $db -> prepare('SELECT nom, prenom FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
     $np ->  execute(['id_utilisateur' => $identifiant]);
@@ -33,7 +24,7 @@
 <head>
 	<title>Page d'affichage des résultats Administrateur Gestionnaire - Carte Chantier</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="gaCarteChantier.css">
+	<link rel="stylesheet" href="css_resultats/gaCarteChantier.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -49,7 +40,7 @@
 		<div class="corpsCentral"  style="flex-direction: 10;"> 
             <header>
                 <div class="localisation">
-                    Localisation
+                    <?php echo $posteCarte ?>
                 </div>
                 <div class="Température capteur">
                     <ul>
@@ -84,11 +75,11 @@
                 <div class="corpsCentralCarte">
                     <img src=https://www.bati-solar.fr/wp-content/uploads/2018/10/nos-maisons-plans-chatellerault-poitiers-plans-des-maisons-dhabitation-plans-des-maisons.jpg style="width : 100%;opacity: 0.5;" alt="CarteChantier" usemap="#CarteChantier1">
                     <map name="CarteChantier1">
-                        <area shape="rect" coords="0 310 310 690" alt="Garage" href="#garage.htm">
-                        <area shape="rect" coords="310 310 780 680" alt="Salon" href="#salon.htm">
-                        <area shape="rect" coords="410 0 770 310" alt="Terrasse" href="#terrasse.htm">
-                        <area shape="rect" coords="770 0 1200 460" alt="Chambres23" href="#chambres23.htm">
-                        <area shape="rect" coords="770 460 1200 690" alt="Cuisine" href="#cuisine.htm">
+                        <area shape="rect" coords="0 310 310 690" alt="Garage" onclick="retourValeur($poste0)" href="gaCarteChantier.php">
+                        <area shape="rect" coords="310 310 780 680" alt="Salon" onclick="retourValeur($poste1)" href="gaCarteChantier.php">
+                        <area shape="rect" coords="410 0 770 310" alt="Terrasse" onclick="retourValeur($poste2)" href="gaCarteChantier.php">
+                        <area shape="rect" coords="770 0 1200 460" alt="Chambres23" onclick="retourValeur($poste3)" href="gaCarteChantier.php">
+                        <area shape="rect" coords="770 460 1200 690" alt="Cuisine" onclick="retourValeur($poste4)" href="gaCarteChantier.php">
                     </map>                
                 </div>
             </div>

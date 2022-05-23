@@ -2,47 +2,45 @@
 <html>
 
 <?php
- require("modele.php");
- $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root',''); // Connexion BDD
- 
+	require("modele.php");
+	require("constants.php");
 
-
-// Récupérer la valeur du poste de travail de l'utilisateur
- $posteTravail1 = $db -> prepare('SELECT poste FROM utilisateur WHERE id_utilisateur = :id_utilisateur;');
- $posteTravail1 -> execute(['id_utilisateur' => $identifiant]);
- $posteTravail2 = $posteTravail1 -> fetchAll();
- foreach($posteTravail2 as $posteTravail3){
-	 $posteTravail = $posteTravail3[0];
- }
+	// Récupérer la valeur du poste de travail de l'utilisateur
+ 	$posteTravail1 = $db -> prepare('SELECT poste FROM utilisateur WHERE id_utilisateur = :id_utilisateur;');
+ 	$posteTravail1 -> execute(['id_utilisateur' => $identifiant]);
+ 	$posteTravail2 = $posteTravail1 -> fetchAll();
+ 	foreach($posteTravail2 as $posteTravail3){
+		$posteTravail = $posteTravail3[0];
+ 	}
 
 
 
- // Récupérer les valeurs du capteur fixe associé à l'utilisateur
- $poste1 = $db -> prepare('SELECT temperature, humidite, bruit, co2 FROM mesures_fixes WHERE (id_capteur = :id_capteur AND jour=:jour) ORDER BY horaire DESC LIMIT 1;');
- $poste1 -> execute(['id_capteur' => $posteTravail, 'jour' => $dateExemple]);
- $poste2 = $poste1 -> fetchAll();
- foreach($poste2 as $poste3){
-	$temp = $poste3[0];
-	$hum = $poste3[1];
-	$bruit = $poste3[2];
-	$co2 = $poste3[3];
- }
+ 	// Récupérer les valeurs du capteur fixe associé à l'utilisateur
+	$poste1 = $db -> prepare('SELECT temperature, humidite, bruit, co2 FROM mesures_fixes WHERE (id_capteur = :id_capteur AND jour=:jour) ORDER BY horaire DESC LIMIT 1;');
+ 	$poste1 -> execute(['id_capteur' => $posteTravail, 'jour' => $day]);
+ 	$poste2 = $poste1 -> fetchAll();
+ 	foreach($poste2 as $poste3){
+		$temp = $poste3[0];
+		$hum = $poste3[1];
+		$bruit = $poste3[2];
+		$co2 = $poste3[3];
+ 	}
 
 
- $np = $db -> prepare('SELECT nom, prenom FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
- $np ->  execute(['id_utilisateur' => $identifiant]);
- $np2 = $np -> fetchAll();
- foreach($np2 as $np3) {
-	 $nom = $np3[0];
-	 $prenom = $np3[1];
- }
+ 	$np = $db -> prepare('SELECT nom, prenom FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
+ 	$np ->  execute(['id_utilisateur' => $identifiant]);
+ 	$np2 = $np -> fetchAll();
+ 	foreach($np2 as $np3) {
+		$nom = $np3[0];
+	 	$prenom = $np3[1];
+ 	}
 ?>
 
 
 <head>
 	<title>Page d'affichage des résultats utilisateur - Capteurs fixes</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="utilisateurCapteurCardiaque.css">
+	<link rel="stylesheet" href="css_resultats/utilisateurCapteurCardiaque.css">
 </head>
 
 

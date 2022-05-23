@@ -2,7 +2,6 @@
 <html>
 
 <?php
-    $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
     require("modele.php");
 
     $np = $db -> prepare('SELECT nom, prenom FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
@@ -18,7 +17,7 @@
 <head>
 	<title>Page d'affichage des résultats Administrateur Gestionnaire - Capteurs fixes</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="gaCapteursFixes.css">
+	<link rel="stylesheet" href="css_resultats/gaCapteursFixes.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
@@ -39,7 +38,7 @@
                 </tr>
                 <?php $fixe=$db -> prepare('SELECT id_capteur, temperature, humidite, bruit, co2 FROM mesures_fixes
                 WHERE (jour = :jour) GROUP BY id_capteur ORDER BY id_capteur;');
-                $fixe -> execute(['jour' => $dateExemple]);
+                $fixe -> execute(['jour' => $day]);
                 $fixe2 = $fixe -> fetchAll();
                 foreach($fixe2 as $fixe3) {
                     $temperature = $fixe3[1];
@@ -52,10 +51,10 @@
                     $couleurCo2 = associationCouleur(couleur('co2'),$co2);
                     echo "<tr>
                     <td>{$fixe3[0]}</td>
-                    <td><i class='material-icons' style='font-size: 20px; color: $couleurTemperature;'>trip_origin</i>   {$temperature}</td>
-                    <td><i class='material-icons' style='font-size: 20px; color: $couleurHumidite;'>trip_origin</i>   {$humidite}</td>
-                    <td><i class='material-icons' style='font-size: 20px; color: $couleurBruit;'>trip_origin</i>   {$bruit}</td>
-                    <td><i class='material-icons' style='font-size: 20px; color: $couleurCo2;'>trip_origin</i>   {$co2}</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurTemperature;'>trip_origin</i>   {$temperature}°C</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurHumidite;'>trip_origin</i>   {$humidite}%</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurBruit;'>trip_origin</i>   {$bruit}dB</td>
+                    <td><i class='material-icons' style='font-size: 20px; color: $couleurCo2;'>trip_origin</i>   {$co2}ppm</td>
                     </tr>";
                 }
                 ?>

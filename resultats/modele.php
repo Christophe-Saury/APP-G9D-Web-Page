@@ -3,7 +3,7 @@
 
     require('constants.php');
     
-    $db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root','');
+    $db = new PDO('mysql:host=localhost;dbname=isep;charset=utf8','root','');
 
     function couleur(string $grandeurMesure) {
         require('constants.php');
@@ -33,7 +33,7 @@
 
     
 
-    function associationCouleur (array $table1, $value){
+    function associationCouleur(array $table1, $value){
         $couleurs = ['green', 'greenyellow', 'yellow', 'orange', 'red', 'black'];
         
         if ($value < $table1[0]){ // Cas 1
@@ -57,4 +57,16 @@
     }
 
 
-    
+    function retourValeur($valeur){
+        if (!isset($posteCarte)){
+            $posteCarte = 0;
+        }
+        $posteCarte = $valeur;
+        echo $posteCarte;
+    }
+
+
+
+
+
+

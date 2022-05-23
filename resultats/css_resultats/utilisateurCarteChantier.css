@@ -1,0 +1,141 @@
+/* SECTION HAUTE : EN-TÊTE ========================================================================================================= */
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif ;
+}
+
+
+
+/* CONTENU DE LA PAGE =============================================================================================================== */
+
+
+
+.corps{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.corps div{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+.central{
+	height: 700px;	
+	flex-grow: 10;
+	display: flex;
+	flex-direction: column;
+}
+
+.central > header {
+	display: flex;
+	flex-direction : row;
+	float: left;
+	justify-content: center;
+	font-size: 20px;
+	padding : auto;
+	background-color: azure;
+	height : 200px;
+}
+
+
+/* PARTIE CENTRALE ===================================================================================================================*/
+
+.corpsCentral {
+	display: flex;
+	flex-direction: row;
+}
+
+
+/* EN-TÊTE DE LA PARTIE CENTRALE =====================================================================================================*/
+.corpsCentral header {
+	display: flex;
+	flex-direction: row;
+    width: 100%;
+    text-align: center;
+    font-size: auto;
+    font-style: italic;
+	background-color: azure;
+	padding-bottom: 0px;
+	border-bottom:1px solid #3d8bcd ;
+	border-left: 1px solid #3d8bcd;
+	border-right: 1px solid #3d8bcd;
+}
+
+.corpsCentral header > div {
+	flex-grow: 1;
+}
+
+.corpsCentral header div ul li{
+	font-size: 20px;
+	list-style: none;
+}
+
+ /* EN-TÊTE PARTIE CENTRALE RESULTATS CAPTEURS =======================================================================================*/
+ 
+ .localisation {
+	font-size: 20px;
+	margin: auto;
+	flex-grow: 1;
+}
+
+
+
+ .capteur {
+    display: flex;
+    flex-direction: row;
+	border-left: 1px solid #3d8bcd;
+}
+
+.capteur ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* PARTIE DROITE BOUTONS DE CHOIX DE CAPTEURS ========================================================================================*/
+
+
+.corpsDroit button{
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	border-radius: 5px;
+    font-size: auto;
+    text-decoration: none;
+	border: 2px solid #3d8bcd;
+	background-color: azure;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #3d8bcd;
+}
+
+.corpsDroit button:hover{
+    transform: translateY(5px);
+    background-color: black;
+    color: white;
+    box-shadow: none;
+}
+
+
+
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+
+
+
+@media screen and (max-width: 600px) {
+
+	
+    .corps{
+        flex-direction: column;
+    }
+
+}

@@ -1,8 +1,28 @@
 <?php
 
+    if(!isset($_SESSION["id_utilisateur"])){
+        session_start();
+        $_SESSION["id_utilisateur"] = 1;
+    }
+
     // Indentifiant de l'utilisateur du site Web
-    $identifiant = 15;
+    //$identifiant = $_SESSION["id_utilisateur"];
+    $identifiant = $_SESSION["id_utilisateur"];
     
+
+    $db = new PDO('mysql:host=localhost;dbname=isep;charset=utf8','root','');
+    $r1 = $db -> prepare('SELECT role FROM utilisateur WHERE (id_utilisateur = :id_utilisateur);');
+    $r1 ->  execute(['id_utilisateur' => $identifiant]);
+    $r2 = $r1 -> fetchAll();
+    foreach($r2 as $r3) {
+        $fonction = $r3[0];
+    }
+
+
+    if(!isset($posteCarte)){
+        $posteCarte = 0;
+    }
+
 
     // Listes des tables de valeurs et de seuils (pour les changement de couleur)
 // ======================================================================================================================================================================
@@ -54,20 +74,9 @@
     // Intervalle de temps entre chaque mesure (en s)
     $periodeMesure = 60;
 
-
-    // Exemples pour la BDD réalisée sur les capteurs - A SUPPRIMER DES LA MISE EN PLACE DE LA PASSERELLE. PERMET DE CONTOURNER LA PASSERELLE
-	// Exemple de date
-    $dateExemple = '2022-01-01';
-    // Exemple d'heure
-	$heureExemple = '15:00:00';
-
-    // ======================================================================================================================================================================
-
-
-
-
-
-?>
-
-
-
+    $poste0 = 0;
+    $poste1 = 1;
+    $poste2 = 2;
+    $poste3 = 3;
+    $poste4 = 4;
+    $poste5 = 5;

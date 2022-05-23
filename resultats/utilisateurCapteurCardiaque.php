@@ -2,15 +2,9 @@
 <html>
 
 <?php
-	$db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root',''); // Connexion BDD
-	$hour = time(); // Heure actuelle
-	$hour2 = date('H:i:s',$hour -3600); // Heure d'avant
-	$day = date('Y-m-d'); // date du jour
-	$seuilFreq = 160; // Seuil de signalisation "stress"
-	$periodeMesure = 60; // Intervalle de temps entre chaque mesure (en s)
-
-	$dateExemple = '2022-01-01'; // Test de date
-	$heureExemple = '15:00:00'; // Test d'horaire
+	if(!isset($couleurs)){
+		require("modele.php");
+	}
 
 	// Requête SQL pour trouver le rythme cardiaque actuel
 	$query11 = $db -> prepare('SELECT frequence FROM mesures_cardiaque WHERE (id_utilisateur = :id_utilisateur) ORDER BY horaire DESC LIMIT 1;');
@@ -22,8 +16,8 @@
 	$query21 = $db -> prepare('SELECT ROUND(AVG(frequence),1) FROM mesures_cardiaque WHERE (id_utilisateur = :id_utilisateur AND jour=:jour AND horaire >= :horaire);');
 	$query21 ->  execute([
 		'id_utilisateur' => $identifiant,
-		'jour' => $dateExemple,
-		'horaire' => $heureExemple
+		'jour' => $day,
+		'horaire' => $hour
 	]);
 	$query22 = $query21 -> fetchAll();
 
@@ -32,8 +26,8 @@
 	$query31 = $db -> prepare('SELECT MAX(frequence)FROM mesures_cardiaque WHERE (id_utilisateur = :id_utilisateur AND jour=:jour AND horaire >= :horaire);');
 	$query31 ->  execute([
 		'id_utilisateur' => $identifiant,
-		'jour' => $dateExemple,
-		'horaire' => $heureExemple
+		'jour' => $day,
+		'horaire' => $hour
 	]);
 	$query32 = $query31 -> fetchAll();
 
@@ -42,7 +36,7 @@
 	$query41 = $db -> prepare('SELECT COUNT(frequence) FROM mesures_cardiaque WHERE (id_utilisateur = :id_utilisateur AND jour = :jour AND frequence > :seuilFreq);');
 	$query41 ->  execute([
 		'id_utilisateur' => $identifiant,
-		'jour' => $dateExemple,
+		'jour' => $day,
 		'seuilFreq' => $seuilFreq
 	]);
 	$query42 = $query41 -> fetchAll();
@@ -62,7 +56,7 @@
 <head>
 	<title>Page d'affichage des résultats utilisateur - Capteur</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="utilisateurCapteurCardiaque.css">	
+	<link rel="stylesheet" href="css_resultats/utilisateurCapteurCardiaque.css">	
 </head>
 
 
