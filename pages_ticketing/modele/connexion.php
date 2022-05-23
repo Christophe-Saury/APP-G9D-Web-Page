@@ -2,7 +2,7 @@
 //connexion à la bdd
 try
 {
-	$bdd = new PDO("mysql:host=localhost;dbname=page_ticketing", "root", "");
+	$bdd = new PDO("mysql:host=localhost;dbname=isep", "root", "");
 }
 catch (Exception $e)
 {

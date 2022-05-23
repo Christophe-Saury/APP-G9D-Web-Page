@@ -1,7 +1,7 @@
 <?php
 // Requêtes génériques pour récupérer les données de la BDD
 // Appel du fichier déclarant PDO
-include'connexion.php'; 
+include 'connexion.php'; 
 
 /**
  * Récupère tous les éléments d'une table

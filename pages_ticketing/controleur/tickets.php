@@ -1,18 +1,20 @@
 <?php
 //On récupère les requêtes génériques
 include '../modele/requetes_generiques.php';
-//0n définit le nom de la table
+
+session_start ();
+
+//Constantes
 $table = "tickets";
 $table_reponse ='reponse';
+$id_utilisateur = 23;
+$role_utilisateur = 0;
 
-//On recupère les infos de la personne qui se connecte 
-//à completer plus tard avec la partie de @Yassine
-$id_utilisateur = 21;//$_SESSION['user_id'];
-$role_utilisateur =1;//$_SESSION['role'];
-//Controleur des fonctionalités qui nécessitent une gestion d'affichage l'affichage
+//Controleur des fonctionalités qui nécessitent un nouvel affichage
 if (isset($_GET['fonction'])){
         $function = ($_GET['fonction']);
 }else{
+    
     if ($role_utilisateur == 1){
         $function='tickets';
     }else {
@@ -20,13 +22,15 @@ if (isset($_GET['fonction'])){
     }   
 }
 
-//Controleur des fonctionalités des boutons
+//Controleur des fonctionalités qui ne necessitent pas d'affichage
 if(isset($_GET['action'])) {
     $action =$_GET['action'];
     $IDTicket =$_GET ['id_ticket_recherche'];
 }else {
     $action='';
 }
+
+//Differents cas des deux controleurs d'actions
 switch ($action) {
     case 'supprimer' :
         supprimeTicket ($bdd, $IDTicket);
@@ -36,14 +40,18 @@ switch ($action) {
         $res = demanderEtat($bdd, $IDTicket);
         changerEtat($bdd, $IDTicket, $res);
     break; 
-
 }
 
 switch ($function) {
     case 'tickets':
-        //Afficher la liste des tickets ouvverts
+        //Afficher la liste des tickets ouverts
         $vue = "liste_tickets";
         $liste = recupereTousSelontUtilisateur($bdd, $id_utilisateur);
+    break;
+
+    case 'tickets_admin' : 
+        $vue = 'liste_tickets_admin';
+        $liste = recupereTous($bdd,$table);
     break;
 
     case 'ajout': 
@@ -61,12 +69,6 @@ switch ($function) {
             insertion($bdd, $values, $table);
         }
     break;  
-    
-    case 'tickets_admin' : 
-        $vue = 'liste_tickets_admin';
-        $table = 'tickets';
-        $liste = recupereTous($bdd,$table);
-    break;
 
     case 'ajouter_reponse':
         $vue ='ajout_reponse';
@@ -97,8 +99,11 @@ switch ($function) {
     break;
 }  
 
-
+//Affichage
 include '../vue/header.php';
 include '../vue/' . $vue . '.php';
 include '../vue/footer.php';
+
 ?>
+
+
