@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Page d'affichage des résultats utilisateur - Capteur</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="utilisateurCapteurCardiaque.css">	
+</head>
+
+
+
+
+<body>
+	<div class="corps">
+		<div class="corpsGauche">
+			<ul class="corpsGaucheHaut">
+				<li class="corpsGaucheHautUtilisateur">Utilisateur</li>
+				<li class="corpsGaucheHautPhoto">Photo</li>
+                <li class="identifiant">NOM Prénom</li>                  
+			</ul>
+			<ul class="corpsGaucheBas">
+				<li><a href="utilisateurCapteurCardiaque.html">Capteur cardiaque</a></li>
+				<li><a href="utilisateurCapteursFixes.html">Votre poste de travail</a></li>
+				<li><a href="utilisateurCarteChantier.html">Carte chantier</a></li>
+			</ul>
+		</div>
+		<div class="central">
+			<header style="margin-bottom: 0; background-color: azure;">
+				Date
+			</header>			
+			<div class="corpsCentral" style="flex-direction:row">
+				<div class="capteurCardiaque capteur">
+					<header>
+						Votre rythme cardiaque actuel
+					</header>
+					<div>
+						63 bpm
+					</div>
+				</div>
+				<div class="capteurCardiaqueMoyenne capteur">
+					<header>
+						Votre rythme cardiaque moyen sur la dernière heure
+					</header>
+					<div>
+						68 bpm
+					</div>
+				</div>
+				<div class="capteurCardiaqueMax capteur">
+					<header>
+						Rythme cardiaque maximal mesuré sur la dernière heure
+					</header>
+					<div>
+						148 bpm
+					</div>
+				</div>
+				<div class="compteurCardiaque capteur">
+					<header>
+						Temps de stress
+					</header>
+					<div>
+						15min45s
+					</div>
+				</div>
+			</div>
+			<footer class="boutonsCentral">
+				<button>Téléchargement</button>
+				<button>Graphiques</button>
+			</footer>
+		</div>
+	</div>
+
+</body>
+
+</html>
