@@ -1,0 +1,133 @@
+* {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  }
+  
+  body{
+    height: 100%;
+  }
+  
+  
+/* Css classes for the flexboxes - Page de Questions du QCM */
+
+.div_container{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:stretch;
+    height:100%;
+    width : 95%;
+    margin : auto;
+}
+
+  
+.Score{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    width: 90%;
+    margin: auto;
+}
+
+.Circle{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    border-color: black;
+    border-radius: 50%;
+    height:200px;
+    width:200px; 
+    background-color: white;   
+    margin:20px;    
+}
+
+.Score_text{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: bold;
+    align-self: center;
+}
+
+.AnswerRatio_Row{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: left;
+    align-items:stretch;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    height:200px;
+    width: 90%;
+    margin: auto;
+}
+
+.AnswerRatio_Column{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    height: 100%;
+    left: 5%;
+}
+
+.Resultats_Button{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #DAE8FC;
+    height: 45px;
+    width: 350px;
+}
+
+.Resultats_text{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-weight: bold;
+    align-self: center;
+    font-size: 110%;
+}
+
+
+.Button_Row{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:stretch;
+    height:200px;
+    width: 85%;
+    margin: auto;
+}
+
+
+.Imp_Buttons{
+    display: inline-block;
+    background-color: #3D8BCD;
+    border-radius: 20px;
+    border: 3px single #000000;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 180px;
+    height: 120px;
+}
+
+.UserPhoto{
+    display: inline-block;
+    background-color: #3D8BCD;
+    border-radius: 20px;
+    border: 3px single #000000;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 180px;
+    height: 120px;
+}

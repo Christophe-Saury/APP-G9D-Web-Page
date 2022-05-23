@@ -1,0 +1,11 @@
+table{
+    border:2px solid black;
+
+}
+
+td{
+    margin:auto;
+    padding:auto;
+    text-align:center;
+    justify-content: center;
+}
