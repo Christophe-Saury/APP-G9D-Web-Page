@@ -1,0 +1,59 @@
+
+
+/*==================== 
+	Footer 
+====================== */
+
+/* Main Footer */
+footer .main-footer{	padding: 20px 0;	background: #3D8BCD !important;}
+footer ul{	padding-left: 0;	list-style: none;}
+
+/* Copy Right Footer */
+.footer-copyright {	
+	height: 30px !important;
+	background: #3D8BCD !important;	
+	padding: 20px 0;
+	position:relative;
+	bottom:0px;
+	box-align:center;
+	width:100%;
+	margin-top: auto;
+
+}
+
+.footer-copyright .logo {    display: inherit;}
+.footer-copyright nav {    float: right;    margin-top: 5px;}
+.footer-copyright nav ul {	list-style: none;	margin: 0;	padding: 0;}
+.footer-copyright nav ul li {	border-left: 1px solid #3D8BCD;	display: inline-block;	line-height: 12px;	margin: 0;	padding: 0 8px;}
+.footer-copyright nav ul li a{	color: #3D8BCD !important; }
+.footer-copyright nav ul li:first-child {	border: medium none;	padding-left: 0;}
+.footer-copyright p {	color: #ffff !important;	margin: 2px 0 0;}
+
+/* Footer Top */
+.footer-top{	background: #3D8BCD;	padding-bottom: 30px;	margin-bottom: 30px;	border-bottom: 3px solid #222;}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer{	background: transparent;}
+footer.transparent .footer-copyright{	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3) ;}
+
+/* Footer light */
+footer.light .footer-top{	background: #f9f9f9;}
+footer.light .main-footer{	background: #f9f9f9;}
+footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3) ;}
+
+/* Footer 4 */
+.footer- .logo {    display: inline-block;
+
+}
+
+.footer-copyright .row{
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.footer-text{
+	display: flex;
+	justify-content: space-between;
+
+}
+
