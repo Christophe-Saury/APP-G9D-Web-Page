@@ -1,0 +1,153 @@
+body{
+font-family:arial;
+font-size:15px;
+line-height:1.6em;
+}
+
+li{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+.question_div{
+    width: 80%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 5px #3D8BCD solid;
+    border-radius:20px;
+    background-color: #3D8BCD;
+}
+
+
+
+
+.input_div{
+    width: 70%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 5px #3D8BCD solid;
+    border-radius:20px;
+    background-color: #3D8BCD;
+}
+
+.correct_div{
+    width: 8%;
+    padding: 2px;
+    position:relative;
+    display:flex;
+    flex-direction:row;
+justify-content: center;
+    align-items:stretch;
+
+    border: 5px #3D8BCD solid;
+    border-radius:20px;
+    background-color: #3D8BCD;
+
+
+}
+
+
+input[type=text] {
+    width: 98%;
+    
+   
+   
+  }
+
+input[type=number] {
+    width: 70%;
+   margin:auto;
+  }
+
+  input[type=submit] {
+    width: 8%;
+    border:4px solid #3D8BCD;
+    border-radius: 20px;;
+  }
+
+
+
+label{
+    display:inline-block;
+    width:180px;
+}
+
+
+
+
+
+
+.container{
+    width:60%;
+    margin:0 auto;
+    overflow:auto;
+    background-color: rgb(220, 220, 220) ;
+    border-radius: 20px;
+
+}
+
+header{
+    border-bottom:3px #f4f4f4 solid;
+}
+
+footer{
+    border-top:3px #f4f4f4 solid;
+    text-align:center;
+    padding-top:5px;
+}
+
+main{
+    padding-bottom:20px;
+}
+
+a.start{
+    display:inline-block;
+    color:#666;
+    background:#f4f4f4;
+    border:1px dotted #ccc;
+    padding:6px 13px;
+}
+
+
+
+@media only screen and (max-width:960px){
+    .container{
+        width:80%;
+    }
+}
+
+.titre{
+font-size : 5vw;
+
+}
+
+.row{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+justify-content: center;
+    align-items:stretch;
+}
+
+
+.lastrow{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+justify-content: center;
+    align-items:stretch;
+    margin-right:10%;
+}
+
+
+.textcorrchoice{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+justify-content: center;
+    align-items:stretch;
+}

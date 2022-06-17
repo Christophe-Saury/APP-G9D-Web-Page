@@ -1,0 +1,172 @@
+
+   
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif ;
+}
+
+h1 {
+	text-align: center;
+}
+
+/*Affichage des tickets -------------------------------------------*/
+.tickets_support {
+  table-layout: auto;
+  width: 95%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.row1 {
+  width: 10%;
+}
+
+.row2 {
+  width: 40%;
+}
+
+.row3 {
+  width: 8%;
+}
+
+.row4 {
+  width: 8%;
+}
+
+.row5 {
+  width: 8%;
+}
+
+.row6 {
+  width: 8%;
+}
+.row7 {
+  width: 8%;
+}
+.row8 {
+  width: 10%;
+}
+
+
+
+.tickets_support th, td {
+  padding: 5px;
+}
+
+.tickets_support tbody td {
+  text-align: center;
+}
+
+.tickets_support th {
+	background-color:#3d8bcd; 
+  color: #ffffff;
+}
+
+.tickets_support tr:nth-child(even) {/*lignes paires bleues */
+	background-color:#3d8bcd ;
+	color: #ffffff;
+}
+
+.tickets_support tr:nth-child(odd) {/*ligfnes impaires blanc cassé*/
+	background-color: #f5f5f5 ;
+}
+
+
+
+/*Voir un ticket -------------------------------------------*/
+
+.view_ticket {
+  table-layout: fixed;
+  width: 95%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titre {
+	width: 20%;
+	text-align: left;
+}
+.view_ticket th, td {
+  padding: 10px;
+}
+
+.view_ticket tr:nth-child(odd) {/*lignes paires bleues*/
+	background-color:#3d8bcd ;
+	color: #ffffff;
+}
+
+.view_ticket tr:nth-child(even) {/*ligfnes impaires blanc cassé*/
+	background-color: #f5f5f5 ;
+}
+
+/*Ajouter un ticket -------------------------------------------*/
+
+.add_ticket{
+  table-layout: fixed;
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black; 
+}
+
+.add_ticket th, td {
+	padding: 5px;
+	
+}
+
+.add_ticket tr {/*blanc cassé*/
+	background-color: #f5f5f5 ;
+}
+
+.titreat {
+	width: 20%;
+	text-align: left;
+}
+
+.vert {
+	color:green;
+	font-weight:bold;
+}
+
+.orange{
+	color:orange;
+	font-weight:bold;
+}
+
+.rouge {
+	color:red;
+	font-weight:bold;
+}
+
+.champ {
+  width:400px;
+  height:200px;
+}
+
+.Imp_Buttons{
+  display: inline-block;
+  background-color: #3D8BCD;
+  border-radius: 20px;
+  border: 3px single #000000;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 180px;
+  height: 120px;
+
+}
+
+.Button_Row{
+  position:relative;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:stretch;
+  height:200px;
+  width: 85%;
+  margin: auto;
+}
+
