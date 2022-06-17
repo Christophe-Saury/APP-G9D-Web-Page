@@ -1,0 +1,166 @@
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif ;
+}
+
+
+/* CONTENU DE LA PAGE =============================================================================================================== */
+
+.corps{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.corps div{
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* PARTIE CENTRALE ===================================================================================================================*/
+
+
+/* EN-TÊTE DE LA PARTIE CENTRALE =====================================================================================================*/
+.corpsCentral {
+    width : 100%;
+}
+
+
+.corpsCentral header {
+	display: flex;
+	flex-direction: row;
+    width: 100%;
+    text-align: center;
+    font-size: auto;
+    font-style: italic;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: azure;
+	border-bottom:1px solid #3d8bcd ;
+	border-left: 1px solid #3d8bcd;
+	border-right: 1px solid #3d8bcd;
+}
+
+.corpsCentral header > div {
+	flex-grow: 1;
+}
+
+.corpsCentral header div ul li{
+	font-size: 20px;
+	list-style: none;
+}
+
+
+.corpsCentralCarte {
+    width : 100%;
+}
+
+
+
+
+ /* EN-TÊTE PARTIE CENTRALE RESULTATS CAPTEURS =======================================================================================*/
+ 
+ .localisation {
+	font-size: 20px;
+	margin: auto;
+	flex-grow: 1;
+}
+
+
+
+ .capteur {
+    display: flex;
+    flex-direction: row;
+	border-left: 1px solid #3d8bcd;
+}
+
+.capteur ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* PARTIE DROITE BOUTONS DE CHOIX DE CAPTEURS ========================================================================================*/
+
+
+
+
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+/* ==================================================================================================================================*/
+
+
+
+@media screen and (max-width: 600px) {
+    .menuHaut {
+        font-size : 12px;   
+    }
+
+    .menuHaut ul li{
+        padding: 10px 5px;
+    }
+    
+    .corps{
+        flex-direction: column;
+    }
+
+
+    .corpsGaucheBas{
+        height: 35px;
+        flex-direction: row;
+    }
+
+
+    .corpsGaucheBas li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .corpsGaucheBas a{
+        font-size: 12px;
+    }
+
+
+	
+    .corpsGaucheHaut{
+        height: 100px;
+		flex-direction: row;
+    }
+
+
+	.corpsGaucheHautUtilisateur{
+		flex-grow: 1;
+		border-bottom: none;
+		border-right: 1px solid black;
+		justify-content: center;
+	}
+
+
+
+    .corpsGaucheHautPhoto{
+        flex-grow: 1;
+    }
+
+
+    .identifiant{
+		flex-grow: 1;
+		border-top: none;
+		border-left: 1px solid black;
+    }
+
+
+	
+	.corpsCentral header div ul li{
+		font-size: 10px;
+	}
+
+
+	.localisation {
+		font-size: 10px;
+	}
+
+
+}
