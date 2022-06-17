@@ -1,0 +1,310 @@
+*{
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif ;
+}
+
+
+
+.corps{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+
+
+.corps div{
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+
+
+.corpsGauche{
+    flex-grow: 0.5;
+    background-color : #3d8bcd;
+}
+
+
+
+
+
+.corpsGauche ul {
+	list-style: none;
+	font-style: italic;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+.corpsGaucheHaut{
+    display: flex;
+	height: 200px;
+    flex-direction: column;
+	background-color: azure;
+}
+
+
+
+.corpsGaucheHautUtilisateur{
+	display: flex;
+    border-bottom: 1px solid;
+	margin: 0;
+	font-size: 20px;
+	flex-grow: 1;
+}
+
+
+.corpsGaucheHautPhoto{
+    background-color: azure;
+	flex-grow: 6;
+}
+
+
+
+.identifiant{
+    flex-grow: 1;
+    border-top: 1px solid black;
+    padding: auto;
+    text-align: center;
+}
+
+
+
+
+.corpsGaucheBas {
+	display: flex;
+	flex-direction: column;
+	background-color: #3d8bcd;
+    height: 450px;
+}
+
+
+
+.corpsGaucheBas li {
+	justify-content: space-around;
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+
+.corpsGaucheBas li:hover{
+	background-color: black;
+}
+
+
+
+.corpsGaucheBas a {
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+}
+
+
+
+.corpsCentral{	
+	flex-grow: 7;
+	display: flex;
+	flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+
+
+.enteteCentral{
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	margin: auto;
+}
+
+
+
+.enteteCentral > button {
+	display: flex;
+	border: 2px solid #3d8bcd;
+	margin: auto;
+	margin-top: 10px;
+	padding: 10px;
+	color: black;
+	background-color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+.enteteCentral button:hover {
+	background-color: #3d8bcd;
+	color: white;
+	transition-duration: 1s;
+  }
+  
+
+table{
+	width: 90%;
+	margin: auto;
+}
+
+
+
+tr{
+    display: flex;
+    width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+tr:nth-child(even) {
+	background-color: rgb(61, 139, 205);
+  }
+
+
+
+.entete{
+	background-color: rgba(61, 139, 205,0.6);
+	color: black;
+	border-bottom: 2px solid black;
+}
+
+
+.ligne{
+	margin: auto;
+    padding: auto;
+}
+
+
+.ligne:hover{
+    background-color: rgba(61, 139, 205,0.5);
+	font-size: 25px;
+}
+
+
+
+th,td{
+	width: 20%;
+	font-size: 20px;
+	padding-left: 15px;
+	text-align: left;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .menuHaut {
+        font-size : 12px;   
+    }
+
+    .menuHaut ul li{
+        padding: 10px 5px;
+    }
+    
+
+    .corps{
+        flex-direction: column;
+    }
+
+
+    .corpsGaucheBas{
+        height: 35px;
+        flex-direction: row;
+    }
+
+
+    .corpsGaucheBas li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+
+    .corpsGaucheBas a{
+        font-size: 12px;
+		padding: 0;
+		margin: 0;
+    }
+
+
+    .corpsGaucheHaut{
+        height: 100px;
+		flex-direction: row;
+    }
+
+
+	.corpsGaucheHautUtilisateur{
+		flex-grow: 1;
+		border-bottom: none;
+		border-right: 1px solid black;
+		justify-content: center;
+	}
+
+
+    .corpsGaucheHautPhoto{
+        flex-grow: 1;
+    }
+
+
+    .identifiant{
+		flex-grow: 1;
+		border-top: none;
+		border-left: 1px solid black;
+
+    }
+
+
+	.ligne:hover{
+		font-size: 20px;
+	}
+
+
+	th,td{
+		font-size: 15px;
+	}
+
+
+	table{
+		width: 100%;
+	}
+
+
+
+}
+
+
+
+@media screen and (max-width: 1000px)  {
+	
+	.ligne:hover{
+		font-size: 20px;
+	}
+	
+	
+	th,td{
+		font-size: 15px;
+	}
+
+	table{
+		width: 100%;
+	}
+
+	.ligne{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+		
+}
